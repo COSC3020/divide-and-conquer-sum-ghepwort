@@ -32,28 +32,34 @@ Divide and Conquer Run Time:
 1. If array has 0 or 1 elements, return 0 or arr[0] respectivly $\rightarrow$ 1
 2. Split the array into thirds $\rightarrow$ 1
 3. Add each third recursivly $\rightarrow$ T($\frac{n}{3}$)
-4. Merge each third together $\rightarrow$ 1//DO i need this line?
 
 
-$T(n) = 1, n\le 1  \\
- T(n) = 3T(\frac{n}{3})+1, n>1$ 
+$T(n) = 1, n\le 1$
+
+$T(n) = 3T(\frac{n}{3})+1, n>1$ 
 
 
 
 Solving we get: 
 
-$ T(n) = 3T(\frac{n}{3})+1 \\
-  T(n) = 3(3T(\frac{n}{9})+\frac{1}{3})+1 \\
-  T(n) = 9T(\frac{n}{9})+2 \\
-  T(n) = 27T(\frac{n}{9})+3\\
-  T(n)= ... \\
-  T(n)= 3^{i}T(\frac{n}{3^{i}})+i $
+$T(n) = 3T(\frac{n}{3})+1 $
+
+$T(n) = 3(3T(\frac{n}{9})+\frac{1}{3})+1$
+
+$T(n) = 9T(\frac{n}{9})+2$
+
+$T(n) = 27T(\frac{n}{9})+3$
+$T(n)= ...$
+
+$T(n)= 3^{i}T(\frac{n}{3^{i}})+i$
 
 for $i=log_3n$:
 
-$ T(n) = 3^{log_3n}T(\frac{n}{3^{log_3n}})+{log_3n} \\
-  T(n) = n \cdot T(1) + log_3n \\
-  T(n) = n+log_3n \in \Theta(n)$
+$T(n) = 3^{log_3n}T(\frac{n}{3^{log_3n}})+{log_3n}$
+
+$T(n) = n \cdot T(1) + log_3n$
+
+$T(n) = n+log_3n \in \Theta(n)$
 
 
 From this we get the final $\Theta$ complexity to be $\Theta(n)$.
